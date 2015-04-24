@@ -1,4 +1,4 @@
-var settings = require('/.settings')
+var settings = require('./settings')
 var nodemailer = require('nodemailer')
 
 var transporter = nodemailer.createTransport({
@@ -11,7 +11,7 @@ var transporter = nodemailer.createTransport({
 
 var mailOptions = {
     from: settings.fromEmail,
-    to: toEmail.join(', '),
+    to: settings.toEmail.join(', '),
 }
 
 setInterval(function() {
@@ -25,3 +25,5 @@ setInterval(function() {
             console.log('Message sent: ' + info.response)
     })
 }, settings.interval)
+
+console.log('Started up perennial')
