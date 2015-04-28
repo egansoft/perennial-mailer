@@ -12,10 +12,14 @@ settings.js with the following contents:
 
 ```javascript
 module.exports = {
-    toEmail: ['myfirstemail@example.com', 'mysecondemail@example.org'], // emails to send to
-    fromEmail: 'myotheremail@gmail.com', // email to send from
-    fromService: 'Gmail', // service to send through
-    fromPassword: 'SecretPassword123', // password
-    interval: 1 * 60 * 1000 // interval in milliseconds
+    toEmail: ['youremail@example.com'], // Email to send to
+    fromEmails: [ // Emails to send from
+        {email: 'firstemail@gmail.com', password: '*****', service: 'Gmail'},
+        {email: 'secondemail@gmail.com', password: '****', service: 'Gmail'}
+    ],
+    interval: 180 * 1000 // time interval in milliseconds
 }
 ```
+
+Keep in mind that it might not work reliably yet, as gmail is pretty tricky. I'm still
+working on it.
